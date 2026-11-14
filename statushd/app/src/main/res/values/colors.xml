@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- StatusHD — warna (sama seperti replica/design/tokens.json). -->
+<resources>
+    <color name="sh_accent">#C8102E</color>
+    <color name="sh_accent_dark">#9E0C24</color>
+    <color name="sh_accent_light">#FDECEF</color>
+    <color name="sh_bg">#FFFFFF</color>
+    <color name="sh_surface">#FAF8F8</color>
+    <color name="sh_border">#E8E0E0</color>
+    <color name="sh_text">#1C1A1A</color>
+    <color name="sh_text_muted">#6E6565</color>
+    <color name="ic_launcher_background">#C8102E</color>
+</resources>

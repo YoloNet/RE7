@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FileProvider paths — kongsi fail output (cache) ke WhatsApp. -->
+<paths>
+    <cache-path name="output" path="statushd/" />
+    <external-files-path name="output_ext" path="statushd/" />
+</paths>

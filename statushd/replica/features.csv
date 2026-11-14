@@ -1,41 +1,41 @@
 feature,area,priority,original,clone,notes
-Pick video from gallery,media,must,yes,no,
-Pick photo from gallery,media,must,yes,no,
-One-tap HD compression for WhatsApp status,compression,must,yes,no,"precise pre-compression; does not upscale"
-Choose quality / resolution (720p/1080p),compression,must,yes,no,"preset labels from user reviews; verify in-app"
-Aspect ratio handling (Original / 9:16 / tall 9:20-9:21),compression,must,yes,no,"known bug area in original: black bars on tall videos"
-Share result to WhatsApp Status,sharing,must,yes,no,
-Save compressed output to gallery,media,must,yes,no,
-Video status splitter (30s parts),splitter,must,yes,no,
-Photo to HD status video,compression,must,yes,no,"arrives as a video if sent in chats"
-Free-use limit (3/day) with counter,payments,must,yes,skip,Jean 2026-11-14: 100% free, no limits
-Premium paywall (Weekly/Monthly/Yearly),payments,must,yes,skip,Jean 2026-11-14: no paywall, 100% free
-Compress Pass (Weekly/Monthly),payments,must,yes,skip,Jean 2026-11-14: no paywall, 100% free
+Pick video from gallery,media,must,yes,yes,Built v1.0.0 (S03 MediaStore grid)
+Pick photo from gallery,media,must,yes,yes,Built v1.0.0 (S03)
+One-tap HD compression for WhatsApp status,compression,must,yes,yes,"Built v1.0.0 (FFmpegKit, M0)"
+Choose quality / resolution (720p/1080p),compression,must,yes,yes,"Built v1.0.0 (720p/1080p/4K, S05)"
+Aspect ratio handling (Original / 9:16 / tall 9:20-9:21),compression,must,yes,yes,"Built v1.0.0 — tall videos get blurred-background pad, not black bars"
+Share result to WhatsApp Status,sharing,must,yes,yes,"Built v1.0.0 (S07, FileProvider share)"
+Save compressed output to gallery,media,must,yes,yes,"Built v1.0.0 (S07, Movies/StatusHD)"
+Video status splitter (30s parts),splitter,must,yes,yes,"Built v1.0.0 (S09, parts encoded independently)"
+Photo to HD status video,compression,must,yes,yes,"Built v1.0.0 (S08, 5s silent video)"
+Free-use limit (3/day) with counter,payments,must,yes,skip,"Jean 2026-11-14: 100% free, no limits"
+Premium paywall (Weekly/Monthly/Yearly),payments,must,yes,skip,"Jean 2026-11-14: no paywall, 100% free"
+Compress Pass (Weekly/Monthly),payments,must,yes,skip,"Jean 2026-11-14: no paywall, 100% free"
 Restore purchases,payments,must,yes,skip,Jean 2026-11-14: no purchases to restore
 No watermark for Premium,compression,must,yes,skip,Jean 2026-11-14: no Premium tier; no watermark for anyone
-Privacy consent gate on first launch,onboarding,must,yes,no,"per privacy policy: must accept to use app"
-60 languages (incl. Malay),settings,must,yes,no,
-Ads (banner + interstitial via AdMob),monetization,must,yes,skip,Jean 2026-11-14: no ads, 100% free
-No account / registration required,onboarding,must,yes,no,"local-first per privacy policy"
-Local on-device processing,compression,must,yes,no,"no server upload for compression"
-AI Support Assistant (in-app help chat),support,should,yes,no,"handoff to human support"
+Privacy consent gate on first launch,onboarding,must,yes,partial,"Built v1.0.0 as a short privacy notice, not a blocking gate (no ads/UMP in free app)"
+60 languages (incl. Malay),settings,must,yes,partial,Built v1.0.0 with BM + English; strings ready for more
+Ads (banner + interstitial via AdMob),monetization,must,yes,skip,"Jean 2026-11-14: no ads, 100% free"
+No account / registration required,onboarding,must,yes,yes,"Built v1.0.0 (device key only, local-first)"
+Local on-device processing,compression,must,yes,yes,Built v1.0.0 (FFmpegKit; no INTERNET permission)
+AI Support Assistant (in-app help chat),support,should,yes,no,FAQ-first support built instead (S14); AI chat is M2
 Video trimming,editor,should,yes,no,
 Text overlays (12 fonts / neon glow / borders / shadows),editor,should,yes,no,
 Stickers with alignment guides + snap-to-center,editor,should,yes,no,
 Music and audio (library / own files / extract from video),editor,should,yes,no,
-Before/after quality comparison,compression,should,yes,no,"listing tip: compare both versions"
-Processing progress + cancel,compression,should,yes,no,
-Export error handling + retry,compression,should,yes,no,"top complaint in reviews: exports fail"
-Speed Boost (fast 4K compression),compression,could,yes,no,
-AI Studio hub (all tools),ai-studio,could,yes,no,"phase 2"
-Festival Photoshoot (175 festivals / 460 poses),ai-studio,could,yes,no,"phase 2; token-priced"
-WhatsApp Stickers maker (6/9 pack / animated),ai-studio,could,yes,no,"phase 2"
-Photo Restore,ai-studio,could,yes,no,"phase 2"
-AI Styles / Object Eraser / Passport Photo / Upscale / BG Remover / Fit to Status,ai-studio,could,yes,no,"phase 2"
-AI Image (text-to-image),ai-studio,could,yes,no,"phase 2"
-Photo to Video / Video HD upscale / Video Reframe / Photo Slideshow,ai-studio,could,yes,no,"phase 2"
-AI token wallet (200 starter + 100/month / packs),ai-studio,could,yes,no,"phase 2"
-My Creations gallery,ai-studio,could,yes,no,"phase 2"
-WhatsApp itself and its compression,platform,skip,yes,skip,"not ours to rebuild; we pre-compress for it"
+Before/after quality comparison,compression,should,yes,yes,Built v1.0.0 (S07 Before/After toggle)
+Processing progress + cancel,compression,should,yes,yes,"Built v1.0.0 (S06, foreground service + cancel)"
+Export error handling + retry,compression,should,yes,yes,Built v1.0.0 (S06 error state + retry)
+Speed Boost (fast 4K compression),compression,could,yes,yes,Built v1.0.0 — 4K preset included (veryfast); no separate toggle
+AI Studio hub (all tools),ai-studio,could,yes,no,phase 2
+Festival Photoshoot (175 festivals / 460 poses),ai-studio,could,yes,no,phase 2; token-priced
+WhatsApp Stickers maker (6/9 pack / animated),ai-studio,could,yes,no,phase 2
+Photo Restore,ai-studio,could,yes,no,phase 2
+AI Styles / Object Eraser / Passport Photo / Upscale / BG Remover / Fit to Status,ai-studio,could,yes,no,phase 2
+AI Image (text-to-image),ai-studio,could,yes,no,phase 2
+Photo to Video / Video HD upscale / Video Reframe / Photo Slideshow,ai-studio,could,yes,no,phase 2
+AI token wallet (200 starter + 100/month / packs),ai-studio,could,yes,no,phase 2
+My Creations gallery,ai-studio,could,yes,no,phase 2
+WhatsApp itself and its compression,platform,skip,yes,skip,not ours to rebuild; we pre-compress for it
 WhatsApp user network and contacts,platform,skip,yes,skip,"their network, not a feature"
-MOD APK / premium-unlock circumvention,platform,skip,yes,skip,"piracy; never built"
+MOD APK / premium-unlock circumvention,platform,skip,yes,skip,piracy; never built

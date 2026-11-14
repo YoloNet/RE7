@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- StatusHD — English strings. -->
+<resources>
+    <string name="app_name">StatusHD</string>
+
+    <!-- Common -->
+    <string name="common_back">Back</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_retry">Try again</string>
+    <string name="common_ok">OK</string>
+    <string name="common_understand">Got it</string>
+    <string name="common_close">Close</string>
+    <string name="common_error">Something went wrong. Please try again.</string>
+    <string name="common_loading">Loading…</string>
+
+    <!-- S01 Home -->
+    <string name="home_hero">Compress videos for WhatsApp Status — HD, no blur.</string>
+    <string name="home_mode_video">Video</string>
+    <string name="home_mode_video_sub">Compress video to HD</string>
+    <string name="home_mode_photo">Photo</string>
+    <string name="home_mode_photo_sub">Photo becomes an HD video</string>
+    <string name="home_mode_splitter">Splitter</string>
+    <string name="home_mode_splitter_sub">Long video → 30 seconds</string>
+    <string name="home_mode_ai">AI Studio</string>
+    <string name="home_mode_ai_sub">AI tools &amp; stickers</string>
+    <string name="home_mode_soon">Coming soon</string>
+    <string name="home_recent">Recent</string>
+    <string name="home_footer">100% free — no limits, no ads.</string>
+    <string name="home_settings">Settings</string>
+
+    <!-- S02 Privacy notice -->
+    <string name="privacy_title">Your privacy</string>
+    <string name="privacy_line1">No account — your data stays on your phone.</string>
+    <string name="privacy_line2">Compression happens on your phone — videos are never sent to a server.</string>
+    <string name="privacy_line3">No ads, no tracking.</string>
+    <string name="privacy_read">Read the privacy policy</string>
+    <string name="privacy_full">StatusHD needs no account. All compression happens on your phone with FFmpeg — your videos and photos are never uploaded anywhere. This app has no ads and does not track you. Your WhatsApp number is only stored on your phone, and only used if you choose “Send to my WhatsApp number”.</string>
+
+    <!-- S03 Media picker -->
+    <string name="picker_title_video">Choose a video</string>
+    <string name="picker_title_photo">Choose a photo</string>
+    <string name="picker_search">Search media…</string>
+    <string name="picker_all">All</string>
+    <string name="picker_videos">Videos</string>
+    <string name="picker_photos">Photos</string>
+    <string name="picker_empty">No media found</string>
+    <string name="picker_empty_sub">Try another folder or record a new video.</string>
+    <string name="picker_denied">Media access needed</string>
+    <string name="picker_denied_sub">Allow access to videos and photos so you can pick media to compress.</string>
+    <string name="picker_allow">Allow media access</string>
+
+    <!-- S05 Compression options -->
+    <string name="options_title">Compression options</string>
+    <string name="options_quality">Quality</string>
+    <string name="options_aspect">Aspect ratio</string>
+    <string name="options_aspect_original">Original</string>
+    <string name="options_aspect_original_sub">Tall videos get a blurred background</string>
+    <string name="options_aspect_916">9:16 (Status)</string>
+    <string name="options_aspect_916_sub">Fills the phone screen</string>
+    <string name="options_caption">Caption (optional)</string>
+    <string name="options_caption_hint">Write a caption…</string>
+    <string name="options_estimate">Estimate: %1$s → %2$s</string>
+    <string name="options_start">Start compressing</string>
+
+    <!-- S06 Processing -->
+    <string name="processing_title">Compressing…</string>
+    <string name="processing_photo">Turning your photo into an HD video…</string>
+    <string name="processing_progress">%1$d%% · %2$s / %3$s</string>
+    <string name="processing_cancel">Cancel compression?</string>
+    <string name="processing_cancel_sub">The partial file will be deleted.</string>
+    <string name="processing_cancel_yes">Yes, cancel</string>
+    <string name="processing_failed">Compression failed</string>
+    <string name="processing_failed_sub">%1$s</string>
+
+    <!-- S07 Result -->
+    <string name="result_title">Done</string>
+    <string name="result_before">Before</string>
+    <string name="result_after">After</string>
+    <string name="result_sizes">%1$s → %2$s · %3$s · %4$s</string>
+    <string name="result_share">Share to WhatsApp Status</string>
+    <string name="result_save">Save to gallery</string>
+    <string name="result_send_number">Send to my WhatsApp number</string>
+    <string name="result_number_title">Your WhatsApp number</string>
+    <string name="result_number_sub">The number is stored on your phone only, for this delivery.</string>
+    <string name="result_number_hint">Example: 60123456789</string>
+    <string name="result_number_invalid">Invalid number. Use international format, e.g. 60123456789.</string>
+    <string name="result_no_whatsapp">WhatsApp is not installed</string>
+    <string name="result_no_whatsapp_sub">Install WhatsApp to share to Status.</string>
+    <string name="result_open_whatsapp">WhatsApp opened — choose Status to share.</string>
+    <string name="result_saved">Saved to gallery</string>
+    <string name="result_photo_note">Photos arrive as a video in chats.</string>
+
+    <!-- S09 Splitter -->
+    <string name="splitter_title">30-second splitter</string>
+    <string name="splitter_part">Part %1$d · %2$s–%3$s</string>
+    <string name="splitter_share_all">Share all to Status</string>
+    <string name="splitter_save_all">Save all to gallery</string>
+    <string name="splitter_saved_all">All parts saved</string>
+    <string name="splitter_no_parts">No finished parts yet</string>
+
+    <!-- S14 Support -->
+    <string name="support_title">Help</string>
+    <string name="support_email">Email support</string>
+    <string name="support_faq1_q">Why is my video still blurry on Status?</string>
+    <string name="support_faq1_a">WhatsApp re-compresses every video it receives. StatusHD compresses your video first at a suitable bitrate, so WhatsApp does not have to crush it again.</string>
+    <string name="support_faq2_q">Are my videos sent to a server?</string>
+    <string name="support_faq2_a">No. All compression happens on your phone. A video only leaves your phone when you share or save it yourself.</string>
+    <string name="support_faq3_q">How long does compression take?</string>
+    <string name="support_faq3_a">It depends on the length and quality of the video. A 30-second video is usually done in under a minute.</string>
+    <string name="support_faq4_q">What is the output format?</string>
+    <string name="support_faq4_a">MP4 (H.264 + AAC), 720p, 1080p or 4K as you choose, in the original aspect ratio or 9:16.</string>
+
+    <!-- S15 Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_ms">Bahasa Melayu</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_quality">Default quality</string>
+    <string name="settings_privacy">Privacy</string>
+    <string name="settings_privacy_policy">Privacy policy</string>
+    <string name="settings_privacy_show">Show the privacy notice again</string>
+    <string name="settings_privacy_show_done">The privacy notice will appear again on Home.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_about_text">StatusHD %1$s\nCompress videos for WhatsApp Status — HD, no blur.\n100% free. No account, no ads, no tracking.</string>
+
+    <!-- Service notification -->
+    <string name="notif_channel">Compression</string>
+    <string name="notif_channel_desc">Video compression progress</string>
+    <string name="notif_compressing">Compressing %1$s…</string>
+    <string name="notif_done">Compression done</string>
+    <string name="notif_failed">Compression failed</string>
+</resources>

@@ -1,38 +1,84 @@
 # StatusHD
 
-StatusHD is Jean's own HD WhatsApp Status compressor app — a clean-room
-rebuild of the *functions* of PureStatus (DamTech Designs), with own code,
-own name, own brand, own assets. Nothing here is copied from the original
-app: no code, no assets, no copy, no endpoints, no accounts.
+Mampat video untuk Status WhatsApp — HD, tanpa kabur. **100% percuma.**
 
-Working title: **StatusHD** · applicationId (working): `com.statushd.app`
+Clean-room rebuild of PureStatus' *functions* (from `replica/recon.md` +
+`replica/rea-analysis.md`). Every line of code here is written fresh;
+never their code, assets, brand, endpoints or pricing.
 
-## What is in this folder
+## Status
 
-| path | what |
-| --- | --- |
-| `replica/recon.md` | Recon map of PureStatus (public sources, 2026-11-13): 15 screens, 7 flows, 9 entities, 40 features |
-| `replica/features.csv` | Feature matrix: 19 must, 8 should, 10 could, 3 skip |
-| `replica/rea-analysis.md` | Static analysis of the real PureStatus APK v2026.25 (2026-11-14): FFmpegKit engine, 51 own classes, RevenueCat billing, AI catalog (22 tools, 176 festivals), privacy findings |
-| `replica/architecture.md` | Architecture: native Android (Kotlin + Compose) + FFmpegKit + Room, local-first, 100% free, Supabase only in phase 2 for AI Studio |
-| `replica/schema.sql` | Local Room (SQLite) schema: 9 tables |
+**v1.0.0 (versionCode 1)** — M0 vertical slice + M1 must-haves built:
 
-## Scope
+- Home (mode cards + recent), media picker (grid + search + filters),
+  compression options (720p / 1080p / 4K, Original / 9:16, caption),
+  processing (foreground service, progress, cancel), result
+  (before/after preview, share to WhatsApp, save to gallery,
+  send to my number), 30-second splitter, support (FAQ + email),
+  settings (language BM/EN, default quality, privacy).
+- On-device compression with FFmpegKit — no account, no ads,
+  no tracking, no server in phase 1.
+- Tall videos (9:20/9:21) get a **blurred background pad, not black bars**
+  (the original's top bug, fixed here by design).
+- Split parts are encoded independently (the original's clip-2 freeze
+  is avoided by construction).
 
-- **Phase 1 (core):** pick video/photo → compress precisely for WhatsApp →
-  share to HD Status. Editor, 30 s splitter. **100% free (Jean, 2026-11-14):**
-  no paywall, no subscriptions, no limits, no ads — every feature free.
-- **Phase 2 (AI Studio):** AI tools + token wallet + My Creations, festival
-  catalog, server-side AI via own provider keys.
+Not yet built (next steps): **M2 editor** (trim, text overlays, stickers,
+music), **M3 AI Studio** (phase 2, server-side). See `replica/build-log.md`.
 
-## Build order
+## Build
 
-`replica-architect` (done) → `replica-design` → `replica-build` → `replica-test`
-→ `replica-diff` → `replica-entrepreneur` → `replica-brand` → `replica-launch`
-→ `replica-deploy`.
+Open this folder in **Android Studio** (Rabbit 2 / 2026.2.2 or newer),
+sync Gradle, Run. Gradle 9.8.2 + AGP 9.5.0 + Kotlin 2.4.10 + JDK 21.
+
+- applicationId `com.statushd.app` (working name — rename before launch).
+- compileSdk / targetSdk 36, minSdk 24.
+- No `gradlew` in the repo (Android Studio's own wrapper is used).
+- Pure-Kotlin logic tests (FFmpeg command builder): `bash tools/run-tests.sh`
+  — 35 checks, no Android SDK needed.
+
+## Known limits (honest)
+
+- The APK is large (~70 MB+): FFmpegKit `full` ships native libs for
+  all ABIs, same as the original (62.7 MB).
+- The launcher icon is adaptive XML only; on API 24/25 the default
+  Android icon shows. Add PNGs via Image Asset Studio if that matters.
+- Inter font is not bundled (binary font files cannot be pushed here);
+  the app uses the system font until the TTFs are added to `res/font/`.
+- "Share all" for the splitter shares part 1 and asks the user to
+  repeat in order — WhatsApp has no multi-video Status share.
+- "Send to my number" opens a WhatsApp chat with your own number;
+  you then attach the video from the share sheet (v1 approximation
+  of the original's delivery).
+- WhatsApp-target bitrate presets are estimates (CRF 24/22/20 +
+  maxrate caps); measure the real output on a phone and tune if
+  WhatsApp still re-compresses visibly.
+- The build has **not** been verified by a real Gradle build yet
+  (Gradle cannot run in this VM — loopback blocked). First build
+  is on Jean's PC.
+
+## Layout
+
+```
+statushd/
+  settings.gradle.kts  build.gradle.kts  gradle.properties
+  gradle/libs.versions.toml
+  app/                  # Android module (Kotlin + Jetpack Compose)
+    src/main/
+      AndroidManifest.xml
+      res/values/strings.xml  res/values-en/strings.xml
+      java/com/statushd/app/
+        MainActivity.kt  StatusHdApp.kt
+        config/  data/local/  data/media/
+        media/ (FfmpegCommandBuilder, CompressService)
+        ui/theme/  ui/components/  ui/screens/  ui/navigation/
+        viewmodel/
+  tools/                # JVM tests for the pure-Kotlin logic
+  replica/              # recon, architecture, schema, design, build-log
+```
 
 ## Rules
 
-- Clean-room only. Never copy the original's code, assets, brand, or copy.
-- Never build a MOD APK / premium unlock of the original — piracy.
-- Never use the original's private endpoints or accounts.
+- Never build a MOD APK / premium unlock of the original.
+- No paywall, no subscriptions, no free-use limit, no ads, no watermark.
+- No tracking SDKs, no INTERNET permission in phase 1.

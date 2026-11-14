@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- StatusHD — teks Bahasa Melayu (lalai). -->
+<resources>
+    <string name="app_name">StatusHD</string>
+
+    <!-- Umum -->
+    <string name="common_back">Kembali</string>
+    <string name="common_cancel">Batal</string>
+    <string name="common_retry">Cuba lagi</string>
+    <string name="common_ok">OK</string>
+    <string name="common_understand">Faham</string>
+    <string name="common_close">Tutup</string>
+    <string name="common_error">Sesuatu tidak kena. Cuba lagi.</string>
+    <string name="common_loading">Memuatkan…</string>
+
+    <!-- S01 Home -->
+    <string name="home_hero">Mampatkan video untuk Status WhatsApp — HD, tanpa kabur.</string>
+    <string name="home_mode_video">Video</string>
+    <string name="home_mode_video_sub">Mampat video ke HD</string>
+    <string name="home_mode_photo">Foto</string>
+    <string name="home_mode_photo_sub">Foto jadi video HD</string>
+    <string name="home_mode_splitter">Pemotong</string>
+    <string name="home_mode_splitter_sub">Video panjang → 30 saat</string>
+    <string name="home_mode_ai">AI Studio</string>
+    <string name="home_mode_ai_sub">Alat AI &amp; pelekat</string>
+    <string name="home_mode_soon">Akan datang</string>
+    <string name="home_recent">Terkini</string>
+    <string name="home_footer">100% percuma — tiada had, tiada iklan.</string>
+    <string name="home_settings">Tetapan</string>
+
+    <!-- S02 Notis privasi -->
+    <string name="privacy_title">Privasi anda</string>
+    <string name="privacy_line1">Tiada akaun — data kekal dalam telefon anda.</string>
+    <string name="privacy_line2">Mampatan dibuat dalam telefon — video tidak dihantar ke server.</string>
+    <string name="privacy_line3">Tiada iklan, tiada penjejakan.</string>
+    <string name="privacy_read">Baca dasar privasi</string>
+    <string name="privacy_full">StatusHD tidak memerlukan akaun. Semua mampatan dibuat dalam telefon anda dengan FFmpeg — video dan foto anda tidak dimuat naik ke mana-mana server. Aplikasi ini tiada iklan dan tidak menjejak anda. Nombor WhatsApp hanya disimpan dalam telefon anda, dan hanya digunakan jika anda sendiri memilih “Hantar ke nombor WhatsApp saya”.</string>
+
+    <!-- S03 Pemilih media -->
+    <string name="picker_title_video">Pilih video</string>
+    <string name="picker_title_photo">Pilih foto</string>
+    <string name="picker_search">Cari media…</string>
+    <string name="picker_all">Semua</string>
+    <string name="picker_videos">Video</string>
+    <string name="picker_photos">Foto</string>
+    <string name="picker_empty">Tiada media dijumpai</string>
+    <string name="picker_empty_sub">Cuba folder lain atau rakam video baharu.</string>
+    <string name="picker_denied">Akses media diperlukan</string>
+    <string name="picker_denied_sub">Benarkan akses ke video dan foto supaya anda boleh memilih media untuk dimampatkan.</string>
+    <string name="picker_allow">Benarkan akses media</string>
+
+    <!-- S05 Pilihan mampatan -->
+    <string name="options_title">Pilihan mampatan</string>
+    <string name="options_quality">Kualiti</string>
+    <string name="options_aspect">Nisbah</string>
+    <string name="options_aspect_original">Asal</string>
+    <string name="options_aspect_original_sub">Video tinggi dipadankan dengan latar kabur</string>
+    <string name="options_aspect_916">9:16 (Status)</string>
+    <string name="options_aspect_916_sub">Penuh skrin telefon</string>
+    <string name="options_caption">Kapsyen (pilihan)</string>
+    <string name="options_caption_hint">Tulis kapsyen…</string>
+    <string name="options_estimate">Anggaran: %1$s → %2$s</string>
+    <string name="options_start">Mula mampatkan</string>
+
+    <!-- S06 Memproses -->
+    <string name="processing_title">Memampatkan…</string>
+    <string name="processing_photo">Menukar foto kepada video HD…</string>
+    <string name="processing_progress">%1$d%% · %2$s / %3$s</string>
+    <string name="processing_cancel">Batalkan mampatan?</string>
+    <string name="processing_cancel_sub">Fail separa akan dipadam.</string>
+    <string name="processing_cancel_yes">Ya, batalkan</string>
+    <string name="processing_failed">Mampatan gagal</string>
+    <string name="processing_failed_sub">%1$s</string>
+
+    <!-- S07 Hasil -->
+    <string name="result_title">Siap</string>
+    <string name="result_before">Sebelum</string>
+    <string name="result_after">Selepas</string>
+    <string name="result_sizes">%1$s → %2$s · %3$s · %4$s</string>
+    <string name="result_share">Kongsi ke Status WhatsApp</string>
+    <string name="result_save">Simpan ke galeri</string>
+    <string name="result_send_number">Hantar ke nombor WhatsApp saya</string>
+    <string name="result_number_title">Nombor WhatsApp anda</string>
+    <string name="result_number_sub">Nombor disimpan dalam telefon sahaja, untuk hantaran ini.</string>
+    <string name="result_number_hint">Contoh: 60123456789</string>
+    <string name="result_number_invalid">Nombor tidak sah. Guna format antarabangsa, contoh 60123456789.</string>
+    <string name="result_no_whatsapp">WhatsApp tidak dipasang</string>
+    <string name="result_no_whatsapp_sub">Pasang WhatsApp untuk berkongsi ke Status.</string>
+    <string name="result_open_whatsapp">WhatsApp dibuka — pilih Status untuk berkongsi.</string>
+    <string name="result_saved">Disimpan ke galeri</string>
+    <string name="result_photo_note">Foto dihantar sebagai video dalam sembang.</string>
+
+    <!-- S09 Pemotong -->
+    <string name="splitter_title">Pemotong 30 saat</string>
+    <string name="splitter_part">Bahagian %1$d · %2$s–%3$s</string>
+    <string name="splitter_share_all">Kongsi semua ke Status</string>
+    <string name="splitter_save_all">Simpan semua ke galeri</string>
+    <string name="splitter_saved_all">Semua bahagian disimpan</string>
+    <string name="splitter_no_parts">Tiada bahagian siap lagi</string>
+
+    <!-- S14 Bantuan -->
+    <string name="support_title">Bantuan</string>
+    <string name="support_email">E-mel sokongan</string>
+    <string name="support_faq1_q">Kenapa video saya masih kabur di Status?</string>
+    <string name="support_faq1_a">WhatsApp memampatkan semula setiap video yang dihantar. StatusHD memampatkan video anda dahulu pada bitrate yang sesuai supaya WhatsApp tidak perlu memampatkannya lagi dengan teruk.</string>
+    <string name="support_faq2_q">Adakah video saya dihantar ke server?</string>
+    <string name="support_faq2_a">Tidak. Semua mampatan dibuat dalam telefon anda. Video hanya keluar dari telefon apabila anda sendiri berkongsi atau menyimpannya.</string>
+    <string name="support_faq3_q">Berapa lama mampatan mengambil masa?</string>
+    <string name="support_faq3_a">Bergantung pada panjang dan kualiti video. Video 30 saat biasanya siap dalam masa kurang seminit.</string>
+    <string name="support_faq4_q">Apakah format output?</string>
+    <string name="support_faq4_a">MP4 (H.264 + AAC), 720p, 1080p atau 4K mengikut pilihan anda, dengan nisbah asal atau 9:16.</string>
+
+    <!-- S15 Tetapan -->
+    <string name="settings_title">Tetapan</string>
+    <string name="settings_language">Bahasa</string>
+    <string name="settings_language_ms">Bahasa Melayu</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_quality">Kualiti lalai</string>
+    <string name="settings_privacy">Privasi</string>
+    <string name="settings_privacy_policy">Dasar privasi</string>
+    <string name="settings_privacy_show">Tunjuk notis privasi semula</string>
+    <string name="settings_privacy_show_done">Notis privasi akan muncul semula di Home.</string>
+    <string name="settings_about">Tentang</string>
+    <string name="settings_about_text">StatusHD %1$s\nMampat video untuk Status WhatsApp — HD, tanpa kabur.\n100% percuma. Tiada akaun, tiada iklan, tiada penjejakan.</string>
+
+    <!-- Notifikasi servis -->
+    <string name="notif_channel">Mampatan</string>
+    <string name="notif_channel_desc">Kemajuan mampatan video</string>
+    <string name="notif_compressing">Memampatkan %1$s…</string>
+    <string name="notif_done">Mampatan siap</string>
+    <string name="notif_failed">Mampatan gagal</string>
+</resources>

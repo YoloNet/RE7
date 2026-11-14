@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- StatusHD — tema cerah dikunci (tiada mod gelap dalam v1). -->
+    <style name="Theme.StatusHD" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/sh_bg</item>
+    </style>
+</resources>
