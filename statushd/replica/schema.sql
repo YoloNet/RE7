@@ -1,10 +1,11 @@
 -- StatusHD — local Room (SQLite) schema, phase 1 + phase 2 tables.
 -- Clean-room design from replica/recon.md + replica/rea-analysis.md.
 -- Local-first: no server, no user_id. One database on the device.
--- Dates: epoch millis (local device time is fine for a local meter;
+-- Dates: epoch millis (local device time is fine for local data;
 -- server-side phase-2 timestamps are UTC timestamptz).
--- Money: prices live in Google Play, never in this DB. Phase-2 token
--- purchases are recorded in integer cents on the server only.
+-- Money: none — the app is 100% free (Jean, 2026-11-14). No billing,
+-- no paywall, no ads. Phase 2: no charges — server rate-limits AI usage
+-- for cost control only.
 
 PRAGMA foreign_keys = ON;
 
@@ -43,7 +44,6 @@ CREATE TABLE IF NOT EXISTS compression_jobs (
     output_uri      TEXT,
     size_before     INTEGER NOT NULL DEFAULT 0,
     size_after      INTEGER NOT NULL DEFAULT 0,
-    premium         INTEGER NOT NULL DEFAULT 0,  -- 1 = made while Premium
     caption         TEXT,
     sender_number   TEXT,                        -- own WhatsApp number (opt-in delivery)
     whatsapp        TEXT,                        -- WhatsApp variant used
@@ -109,33 +109,6 @@ CREATE TABLE IF NOT EXISTS sticker_instances (
     rotation    REAL NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS idx_stickers_job ON sticker_instances (job_id);
-
--- Premium state + free-use meter (single row, id = 1) -------------------------
--- Free limit: 3 completed compressions/day. Counter increments ONLY when a
--- job reaches 'delivered', inside the same Room transaction as the status
--- change, so a double-tap or a crash cannot double-count or lose a use.
-CREATE TABLE IF NOT EXISTS entitlement (
-    id                  INTEGER PRIMARY KEY CHECK (id = 1),
-    premium             INTEGER NOT NULL DEFAULT 0,
-    plan                TEXT,                    -- weekly | monthly | yearly | NULL
-    expiry_at           INTEGER,                 -- epoch millis, NULL = none
-    compress_pass       INTEGER NOT NULL DEFAULT 0,
-    compress_pass_expiry_at INTEGER,
-    free_uses_today     INTEGER NOT NULL DEFAULT 0 CHECK (free_uses_today >= 0),
-    free_uses_date      TEXT NOT NULL DEFAULT '' -- local date YYYY-MM-DD of the counter
-);
-INSERT OR IGNORE INTO entitlement (id, free_uses_today, free_uses_date)
-VALUES (1, 0, '');
-
--- AI token wallet, local mirror (PHASE 2) -------------------------------------
--- Server is authoritative; this table is a cache for offline display only.
-CREATE TABLE IF NOT EXISTS ai_credits (
-    id                  INTEGER PRIMARY KEY CHECK (id = 1),
-    balance             INTEGER NOT NULL DEFAULT 0,
-    monthly_grant_date  TEXT,                    -- YYYY-MM-DD of last monthly grant
-    last_sync_at        INTEGER                  -- epoch millis of last server sync
-);
-INSERT OR IGNORE INTO ai_credits (id, balance) VALUES (1, 0);
 
 -- AI results gallery (PHASE 2) ------------------------------------------------
 CREATE TABLE IF NOT EXISTS creations (

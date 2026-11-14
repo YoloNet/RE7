@@ -8,14 +8,14 @@ Share result to WhatsApp Status,sharing,must,yes,no,
 Save compressed output to gallery,media,must,yes,no,
 Video status splitter (30s parts),splitter,must,yes,no,
 Photo to HD status video,compression,must,yes,no,"arrives as a video if sent in chats"
-Free-use limit (3/day) with counter,payments,must,yes,no,
-Premium paywall (Weekly/Monthly/Yearly),payments,must,yes,no,"$3.99 / $6.99 / $69.99"
-Compress Pass (Weekly/Monthly),payments,must,yes,no,"$1.99 / $4.99"
-Restore purchases,payments,must,yes,no,
-No watermark for Premium,compression,must,yes,no,
+Free-use limit (3/day) with counter,payments,must,yes,skip,Jean 2026-11-14: 100% free, no limits
+Premium paywall (Weekly/Monthly/Yearly),payments,must,yes,skip,Jean 2026-11-14: no paywall, 100% free
+Compress Pass (Weekly/Monthly),payments,must,yes,skip,Jean 2026-11-14: no paywall, 100% free
+Restore purchases,payments,must,yes,skip,Jean 2026-11-14: no purchases to restore
+No watermark for Premium,compression,must,yes,skip,Jean 2026-11-14: no Premium tier; no watermark for anyone
 Privacy consent gate on first launch,onboarding,must,yes,no,"per privacy policy: must accept to use app"
 60 languages (incl. Malay),settings,must,yes,no,
-Ads (banner + interstitial via AdMob),monetization,must,yes,no,"own AdMob account, not theirs"
+Ads (banner + interstitial via AdMob),monetization,must,yes,skip,Jean 2026-11-14: no ads, 100% free
 No account / registration required,onboarding,must,yes,no,"local-first per privacy policy"
 Local on-device processing,compression,must,yes,no,"no server upload for compression"
 AI Support Assistant (in-app help chat),support,should,yes,no,"handoff to human support"
